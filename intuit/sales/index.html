@@ -334,8 +334,8 @@ function openElement() {
     element.find('>i').hide();
     element.addClass('expand');
     element.find('.chat').addClass('enter');
-    var strLength = textInput.val().length * 2;
-    textInput.keydown(onMetaAndEnter).prop("disabled", false).focus();
+    //var strLength = textInput.val().length * 2;
+    //textInput.keydown(onMetaAndEnter).prop("disabled", false).focus();
     element.off('click', openElement);
     element.find('.header button').click(closeElement);
     element.find('#sendMessage').click(sendNewMessage);
@@ -347,8 +347,8 @@ function closeElement() {
     element.find('>i').show();
     element.removeClass('expand');
     element.find('.header button').off('click', closeElement);
-    element.find('#sendMessage').off('click', sendNewMessage);
-    element.find('.text-box').off('keydown', onMetaAndEnter).prop("disabled", true).blur();
+    //element.find('#sendMessage').off('click', sendNewMessage);
+    //element.find('.text-box').off('keydown', onMetaAndEnter).prop("disabled", true).blur();
     setTimeout(function() {
         element.find('.chat').removeClass('enter').show()
         element.click(openElement);
@@ -370,7 +370,7 @@ function createUUID() {
     return uuid;
 }
 
-function sendNewMessage() {
+/*function sendNewMessage() {
     var userInput = $('.text-box');
     var newMessage = userInput.html().replace(/\<div\>|\<br.*?\>/ig, '\n').replace(/\<\/div\>/g, '').trim().replace(/\n/g, '<br>');
 
@@ -398,7 +398,7 @@ function onMetaAndEnter(event) {
     if ((event.metaKey || event.ctrlKey) && event.keyCode == 13) {
         sendNewMessage();
     }
-}
+}*/
   }, 10000);
 });
   </script>
