@@ -268,7 +268,16 @@ body {
 }
 
 /*# sourceMappingURL=styles.css.map */
-
+</style>
+<style>
+  div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
 </style>
   <div>
     <h1>Intuit Sales Testing</h1>
@@ -276,7 +285,7 @@ body {
   <script type="text/javascript">
     lpTag.section = ["tsheetssales"];
   </script>
-  <div id="IntuitChatNow" style="float:left"></div>
+  <div id="IntuitChatNow" class="sticky"></div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <script type="text/javascript">
 window.addEventListener("load", function() {
