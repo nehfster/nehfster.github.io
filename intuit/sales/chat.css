@@ -114,9 +114,9 @@
     height:100%
 }
 
-.lp-window-root .lp_main> .lp_message .lp_text { padding:10px 4px 0 4px; text-align:center }
+.lp-window-root .lp_main>.lp_message .lp_text { padding:10px 4px 0 4px; text-align:center }
 
-.lp-window-root .lp_main> .lp_message .lp_buttons_area {
+.lp-window-root .lp_main>.lp_message .lp_buttons_area {
     position:relative;
     text-align:center;
     padding:0 5%;
@@ -124,7 +124,7 @@
     margin-top:5px
 }
 
-.lp-window-root .lp_main> .lp_message .lp_buttons_area button {
+.lp-window-root .lp_main>.lp_message .lp_buttons_area button {
     padding:9px 6px;
     width:45%;
     float:left;
@@ -137,7 +137,7 @@
     white-space:nowrap
 }
 
-.lp-window-root .lp_main> .lp_message .lp_buttons_area .lp_confirm_button {
+.lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_confirm_button {
     color:#fff;
     background-color:#0363ad;
     margin-left:10%;
@@ -148,15 +148,15 @@
     border-radius:2px
 }
 
-.lp-window-root .lp_main> .lp_message .lp_buttons_area .lp_confirm_button:disabled { opacity:0.5; cursor:default }
+.lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_confirm_button:disabled { opacity:0.5; cursor:default }
 
-.lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_confirm_button:hover,.lp-window-root .lp_main> .lp_message .lp_buttons_area .lp_confirm_button:focus { background-color:#025487 }
+.lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_confirm_button:hover,.lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_confirm_button:focus { background-color:#025487 }
 
-.lp_lpIos .lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_cancel_button:hover, .lp_lpIos .lp-window-root .lp_main> .lp_message .lp_buttons_area .lp_cancel_button:focus { background:#F2F2F2 }
+.lp_lpIos .lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_cancel_button:hover, .lp_lpIos .lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_cancel_button:focus { background:#F2F2F2 }
 
-.lp-window-root .lp_main> .lp_message .lp_buttons_area .lp_cancel_button { background:transparent; color:#6d6e70 }
+.lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_cancel_button { background:transparent; color:#6d6e70 }
 
-.lp-window-root .lp_main> .lp_message .lp_buttons_area .lp_single_button { float:none; margin-left:0 }
+.lp-window-root .lp_main>.lp_message .lp_buttons_area .lp_single_button { float:none; margin-left:0 }
 
 .lp-window-root .lp_header-content-wrapper { width:100%; height:100% }
 
@@ -179,15 +179,15 @@
     cursor:pointer
 }
 
-.lp-window-root> .lpmx { 
+.lp-window-root>.lpmx { 
     border-radius:5px 5px 0 0;
     box-shadow:0 0 16px 3px rgba(0,0,0,0.2);
     color:#000
 }
 
-.lp-window-root> .lpmx> .lp_main { background-color:#fff }
+.lp-window-root>.lpmx>.lp_main { background-color:#fff }
 
-.lp-window-root> .lpmx .lp_external-window {
+.lp-window-root>.lpmx .lp_external-window {
     border-radius:0;
     position:fixed;
     left:0;
@@ -199,9 +199,9 @@
     overflow:hidden
 }
 
-.lp-window-root> .lpmx .lp_external-window .lp_no-top> .lp_header { display:none }
+.lp-window-root>.lpmx .lp_external-window .lp_no-top>.lp_header { display:none }
 
-.lp-window-root> .lpmx .lp_external-window .lp_no-top> .lp_main { top:0 }
+.lp-window-root>.lpmx .lp_external-window .lp_no-top>.lp_main { top:0 }
 
 .lp-window-root button:focus { outline:#5879da solid 2px }
 
@@ -262,33 +262,33 @@
 
 .lp_desktop .lp-window-root>* .lp_header button { z-index:99999999; top:6px }
 
-.lp_desktop .lp-window-root> .lpmx { height:400px; max-height:100% }
+.lp_desktop .lp-window-root>.lpmx { height:400px; max-height:100% }
 
-.lp_desktop .lp-window-root> .lpmx> .lp_header .lp_title {
+.lp_desktop .lp-window-root>.lpmx>.lp_header .lp_title {
     float:left;
     padding-top:9px;
     padding-left:3px
 }
 
-.lp_desktop .lp-window-root> .lpmx> .lp_main { height:auto; top:36px }
+.lp_desktop .lp-window-root>.lpmx> .lp_main { height:auto; top:36px }
 
-.lp_desktop .lp-window-root> .lpmx .lp_header-content-wrapper .lp_header-buttons-container {
+.lp_desktop .lp-window-root>.lpmx .lp_header-content-wrapper .lp_header-buttons-container {
     float:right;
     direction:ltr;
     font-size:0
 }
 
-.lp_desktop .lp-window-root> .lpmx .lp_header-content-wrapper button { position:relative; display:inline-block }
+.lp_desktop .lp-window-root>.lpmx .lp_header-content-wrapper button { position:relative; display:inline-block }
 
-.lp_desktop .lp-window-root> .lpmx .lp_header-content-wrapper .lp_cancel_button:hover, .lp_desktop .lp-window-root> .lpmx .lp_header-content-wrapper .lp_cancel_button:focus { background:#F2F2F2 }
+.lp_desktop .lp-window-root>.lpmx .lp_header-content-wrapper .lp_cancel_button:hover, .lp_desktop .lp-window-root>.lpmx .lp_header-content-wrapper .lp_cancel_button:focus { background:#F2F2F2 }
 
-.lp_desktop .lp-window-root> .lp_maximized_large {
+.lp_desktop .lp-window-root>.lp_maximized_large {
     width:340px;
     height:580px;
     max-height:100%
 }
 
-.lp_desktop .lp-window-root> .lp_floating {
+.lp_desktop .lp-window-root>.lp_floating {
     margin-bottom:20px;
     max-height:calc(100% - 20px)
 }
@@ -306,7 +306,7 @@
 
 .lpdv .lp-window-root .lp_header-content-wrapper .lp_header-buttons-container { display:table }
 
-.lpdv .lp-window-root> .lpmx {
+.lpdv .lp-window-root>.lpmx {
     z-index:99999999;
     opacity:0.95;
     position:fixed;
@@ -317,17 +317,17 @@
     border-radius:0
 }
 
-.lpdv .lp-window-root> .lpmx> .lp_header {
+.lpdv .lp-window-root>.lpmx>.lp_header {
     direction:ltr;
     height:8%;
     min-height:40px
 }
 
-.lpdv .lp-window-root> .lpmx> .lp_header .lp_title { width:100%; text-align:center }
+.lpdv .lp-window-root>.lpmx>.lp_header .lp_title { width:100%; text-align:center }
 
-.lpdv .lp-window-root> .lpmx> .lp_header .lp_top-text { text-align:center }
+.lpdv .lp-window-root>.lpmx>.lp_header .lp_top-text { text-align:center }
 
-.lpdv .lp-window-root> .lpmx> .lp_header button {
+.lpdv .lp-window-root>.lpmx>.lp_header button {
     top:0;
     right:0;
     height:100%;
@@ -336,17 +336,17 @@
     position:absolute
 }
 
-.lpdv .lp-window-root> .lpmx> .lp_header .lp_close { right:0 }
+.lpdv .lp-window-root>.lpmx>.lp_header .lp_close { right:0 }
 
-.lpdv .lp-window-root> .lpmx> .lp_main { height:92% }
+.lpdv .lp-window-root>.lpmx>.lp_main { height:92% }
 
-.lpdv .lp-window-root> .lpmx> .lp_main .lp_buttons_area { margin-top:3% }
+.lpdv .lp-window-root>.lpmx>.lp_main .lp_buttons_area { margin-top:3% }
 
-.lpdv .lp-window-root> .lpmx> .lp_main .lp_buttons_area button { font-size:1.2em }
+.lpdv .lp-window-root>.lpmx>.lp_main .lp_buttons_area button { font-size:1.2em }
 
-.lpdv .lp-window-root .lp_landscape .lp-window-root> .lpmx .lp_header { display:none }
+.lpdv .lp-window-root .lp_landscape .lp-window-root>.lpmx .lp_header { display:none }
 
-.lpdv .lp-window-root .lp_landscape .lp-window-root> .lpmx> .lp_main {
+.lpdv .lp-window-root .lp_landscape .lp-window-root>.lpmx> .lp_main {
     padding-top:0;
     top:0;
     height:100%
@@ -356,4 +356,4 @@
 
 .lp_tablet .lp-window-root { font-size:18px }
 
-.lp_tablet .lp-window-root> .lpmx .lp_header-content-wrapper .lp_title .lp_top-text { max-width:250px }
+.lp_tablet .lp-window-root>.lpmx .lp_header-content-wrapper .lp_title .lp_top-text { max-width:250px }
