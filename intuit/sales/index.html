@@ -279,6 +279,7 @@ body {
   <div id="IntuitChatNow"></div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <script type="text/javascript">
+window.addEventListener("load", function() {
   var element = $('.floating-chat');
 var myStorage = localStorage;
 
@@ -363,6 +364,7 @@ function onMetaAndEnter(event) {
         sendNewMessage();
     }
 }
+});
   </script>
 </body>
 </html>
