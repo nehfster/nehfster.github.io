@@ -113,6 +113,41 @@
 
     <!-- BEGIN Auto Click Engagement Button -->
     <script type="text/javascript">
+    lpTag.events.bind({
+        eventName: 'OFFER_DISPLAY',
+        appName: 'LP_OFFERS',
+        func: function processThis(data) {
+            /* If we match the animated button section(s) we
+            need to inject the code which supports the hide function (the button X)
+            */
+            attachDismissEvent();
+
+            /* Check to see if we are on the coverage page, lets listen for minimize button */
+            if (lpTag.section.indexOf('coveragemap') >= 0
+                || lpTag.section.indexOf('comparisonmap') >= 0) {
+                attachEventListenerCoverageMaps();
+            }
+
+            /* Used for ABC auth redirect deeplink */
+            const isMyTmo = document.URL.indexOf('my.t-mobile.com') >= 0;
+            if ((lpTag.section.indexOf('abc') >= 0) && isMyTmo) {
+                bindMyTmoAbcLink();
+            }
+
+            const lpLocalStorage = window.localStorage;
+            lpLocalStorage.setItem('lp_engagementId', data.engagementId);
+            logger(`Engagement ${data.engagementName} (${data.engagementId}) displayed`);
+            if (data.engagementName.indexOf('MyTMO Global Nav [SPA]') >= 0) {
+                const s = document.getElementById('messageUSSeparator');
+                s.removeAttribute('hidden');
+            } else if (data.engagementName.indexOf('CPS Error Page') >= 0) {
+                pfa('EN');
+            } else if (existsInArray(data.engagementName, 'Spanish CPS Error Page')) {
+                pfa('SP');
+            }
+        },
+    });
+    /*
     function callbackFunction(data) {
         ​​​​​​​​​​​​​​​​​​​​​const lpLocalStorage = window.localStorage;
         if( !lpLocalStorage.getItem("lp_engagementId") ) {​​​​​​​​​​​​​​​
@@ -129,8 +164,9 @@
         appName:"LP_OFFERS",
         func:callbackFunction,
         async:true,
-        triggerOnce:false
+        triggerOnce:false,
     }​​​​​​​​​​​​​​​​​​​​​​​​​​​​);
+    */
     </script>
     <!-- END Auto Click Engagement Button -->
 </body>
