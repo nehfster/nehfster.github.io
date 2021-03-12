@@ -120,11 +120,11 @@
         appName: 'LP_OFFERS',
         func: function processThis(data) {
             //if( !lpLocalStorage.getItem("lp_engagementId" )) {
-            if( !lpLocalStorage.length < 2 ) {
+            if( !lpLocalStorage.lp_engagementId ) {
                 lpLocalStorage.setItem("lp_engagementId", data.engagementId);
                 logger(`Engagement ${data.engagementName} (${lpLocaalStorage.lp_engagementId}) displayed`);
             } else if( lpLocalStorage.lp_engagementId === data.engagementId ) {
-                logger('TODO: Code to click lpAuthButton');
+                logger('TODO: Code to auto click lpAuthButton');
                 lpLocalStorage.removeItem("lp_engagementId");
             } else {
                 logger('Local Storage Failed!');
@@ -132,7 +132,7 @@
             }
         },
         async: true,
-        triggerOnce: false,
+        triggerOnce: true,
     });
     </script>
     <!-- END Auto Click Engagement Button -->
