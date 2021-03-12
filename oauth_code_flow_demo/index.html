@@ -119,8 +119,8 @@
         eventName: 'OFFER_DISPLAY',
         appName: 'LP_OFFERS',
         func: function processThis(data) {
-            //if( !lpLocalStorage.getItem("lp_engagementId" )) {
-            if( lpLocalStorage.lp_engagementId === null || lpLocalStorage.lp_engagementId != "3165916730" ) {
+            if( !lpLocalStorage.lp_engagementId ) {
+            //if( lpLocalStorage.lp_engagementId === null || lpLocalStorage.lp_engagementId != "3165916730" ) {
                 lpLocalStorage.setItem("lp_engagementId", data.engagementId);
                 logger(`Engagement ${data.engagementName} (${lpLocalStorage.lp_engagementId}) displayed`);
             } else if( lpLocalStorage.lp_engagementId == data.engagementId ) {
