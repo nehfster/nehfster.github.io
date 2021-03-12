@@ -122,7 +122,7 @@
             //if( !lpLocalStorage.getItem("lp_engagementId" )) {
             if( lpLocalStorage.lp_engagementId === null || lpLocalStorage.lp_engagementId != "3165916730" ) {
                 lpLocalStorage.setItem("lp_engagementId", data.engagementId);
-                logger(`Engagement ${data.engagementName} (${lpLocaalStorage.lp_engagementId}) displayed`);
+                logger(`Engagement ${data.engagementName} (${lpLocalStorage.lp_engagementId}) displayed`);
             } else if( lpLocalStorage.lp_engagementId == data.engagementId ) {
                 logger('TODO: Code to auto click lpAuthButton');
                 lpLocalStorage.removeItem("lp_engagementId");
