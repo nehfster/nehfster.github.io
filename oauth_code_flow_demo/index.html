@@ -28,7 +28,7 @@
     lpGetCode = function (callback) {
         code = getParameterByName('code')
         if (code == null) {
-            console.log('code undefined');
+            logger('code undefined');
             document.location = cnf.authURI + "?" + $.param({
                 client_id: cnf.clientID,
                 response_type: cnf.response_type,
@@ -37,7 +37,7 @@
             });
         }
         else {
-            console.log("Got the Authcode from redirect url::" + code);
+            logger("Got the Authcode from redirect url::" + code);
 
             var result = {
                 ssoKey: code,
@@ -124,7 +124,10 @@
             } else if( lpLocalStorage.getItem("lp_engagementId") === data.engagementId ) {
                 logger('TODO: Code to click lpAuthButton');
                 lpLocalStorage.removeItem("lp_engagementId");
-            } else { return; }
+            } else {
+                logger('Local Storage Failed!');
+                return; 
+            }
         },
         async: true,
         triggerOnce: false,
