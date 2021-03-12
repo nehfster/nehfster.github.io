@@ -120,10 +120,10 @@
         appName: 'LP_OFFERS',
         func: function processThis(data) {
             //if( !lpLocalStorage.getItem("lp_engagementId" )) {
-            if( !lpLocalStorage ) {
+            if( !lpLocalStorage.length < 2 ) {
                 lpLocalStorage.setItem("lp_engagementId", data.engagementId);
-                logger(`Engagement ${data.engagementName} (${lpLocaalStorage.getItem("lp_engagementId")}) displayed`);
-            } else if( lpLocalStorage.getItem("lp_engagementId") === data.engagementId ) {
+                logger(`Engagement ${data.engagementName} (${lpLocaalStorage.lp_engagementId}) displayed`);
+            } else if( lpLocalStorage.lp_engagementId === data.engagementId ) {
                 logger('TODO: Code to click lpAuthButton');
                 lpLocalStorage.removeItem("lp_engagementId");
             } else {
