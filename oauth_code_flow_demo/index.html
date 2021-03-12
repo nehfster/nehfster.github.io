@@ -123,7 +123,7 @@
                 lpLocalStorage.setItem("lp_engagementId", data.engagementId);
                 logger(`Engagement ${data.engagementName} (${lpLocalStorage.lp_engagementId}) displayed`);
             } else if( lpLocalStorage.lp_engagementId == data.engagementId ) {
-                logger('TODO: Code to auto click lpAuthButton');
+                logger('TODO: Code to auto click lpAuthButton to START Auth conversation');
                 lpLocalStorage.removeItem("lp_engagementId");
             } else {
                 logger('Local Storage Failed!');
