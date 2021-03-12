@@ -129,26 +129,6 @@
         async: true,
         triggerOnce: false,
     });
-    /*
-    function callbackFunction(data) {
-        ​​​​​​​​​​​​​​​​​​​​​const lpLocalStorage = window.localStorage;
-        if( !lpLocalStorage.getItem("lp_engagementId") ) {​​​​​​​​​​​​​​​
-            lpLocalStorage.setItem( "lp_engagementId", data.engagementId );
-            logger(`Engagement ${​​​​​​​​​​​​​​​​data.engagementName}​​​​​​​​​​​​​​​​ (${​​​​​​​​​lpLocalStorage.getItem("lp_engagementId")}​​​​​​​​​​​​​​​​) displayed`);
-        ​​​​​​​}​​​​​​​​​​​​​​​​​​​​​​​​​​​​ else if( lpLocalStorage.getItem("lp_engagementId") === data.engagementId ) {
-            logger( 'TODO: Code to click lpAuthButton' );
-            lpLocalStorage.removeItem("lp_engagementId");
-        }​​​​​​​​​​​​ else {​​​​​​​​​ return; }​​​​​​​​​
-    }​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-    
-    lpTag.events.bind({​​​​​​​​​​​​​​​​​​​​​
-        eventName:"OFFER_DISPLAY",
-        appName:"LP_OFFERS",
-        func:callbackFunction,
-        async:true,
-        triggerOnce:false,
-    }​​​​​​​​​​​​​​​​​​​​​​​​​​​​);
-    */
     </script>
     <!-- END Auto Click Engagement Button -->
 </body>
