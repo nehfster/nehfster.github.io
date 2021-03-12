@@ -119,7 +119,8 @@
         eventName: 'OFFER_DISPLAY',
         appName: 'LP_OFFERS',
         func: function processThis(data) {
-            if( !lpLocalStorage.getItem("lp_engagementId" )) {
+            //if( !lpLocalStorage.getItem("lp_engagementId" )) {
+            if( !lpLocalStorage ) {
                 lpLocalStorage.setItem("lp_engagementId", data.engagementId);
                 logger(`Engagement ${data.engagementName} (${lpLocaalStorage.getItem("lp_engagementId")}) displayed`);
             } else if( lpLocalStorage.getItem("lp_engagementId") === data.engagementId ) {
