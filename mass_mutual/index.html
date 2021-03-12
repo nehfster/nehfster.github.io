@@ -8,116 +8,130 @@
 </head>
 
 <body>
-    <!-- BEGIN LivePerson Monitor Tag - Jim's UK Dev: 17243116; Jim's NA Dev: 54005696; -->
-    <script type="text/javascript">window.lpTag=window.lpTag||{},'undefined'==typeof window.lpTag._tagCount?(window.lpTag={wl:lpTag.wl||null,scp:lpTag.scp||null,site:'54005696'||'',section:lpTag.section||'',tagletSection:lpTag.tagletSection||null,autoStart:lpTag.autoStart!==!1,ovr:lpTag.ovr||{},_v:'1.10.0',_tagCount:1,protocol:'https:',events:{bind:function(t,e,i){lpTag.defer(function(){lpTag.events.bind(t,e,i)},0)},trigger:function(t,e,i){lpTag.defer(function(){lpTag.events.trigger(t,e,i)},1)}},defer:function(t,e){0===e?(this._defB=this._defB||[],this._defB.push(t)):1===e?(this._defT=this._defT||[],this._defT.push(t)):(this._defL=this._defL||[],this._defL.push(t))},load:function(t,e,i){var n=this;setTimeout(function(){n._load(t,e,i)},0)},_load:function(t,e,i){var n=t;t||(n=this.protocol+'//'+(this.ovr&&this.ovr.domain?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site);var o=document.createElement('script');o.setAttribute('charset',e?e:'UTF-8'),i&&o.setAttribute('id',i),o.setAttribute('src',n),document.getElementsByTagName('head').item(0).appendChild(o)},init:function(){this._timing=this._timing||{},this._timing.start=(new Date).getTime();var t=this;window.attachEvent?window.attachEvent('onload',function(){t._domReady('domReady')}):(window.addEventListener('DOMContentLoaded',function(){t._domReady('contReady')},!1),window.addEventListener('load',function(){t._domReady('domReady')},!1)),'undefined'===typeof window._lptStop&&this.load()},start:function(){this.autoStart=!0},_domReady:function(t){this.isDom||(this.isDom=!0,this.events.trigger('LPT','DOM_READY',{t:t})),this._timing[t]=(new Date).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],hooks:lpTag.hooks||[],identities:lpTag.identities||[],ev:lpTag.ev||[]},lpTag.init()):window.lpTag._tagCount+=1;
+<!-- BEGIN LivePerson Monitor Tag - Jim's UK Dev: 17243116; Jim's NA Dev: 54005696; -->
+<script type="text/javascript">window.lpTag=window.lpTag||{},'undefined'==typeof window.lpTag._tagCount?(window.lpTag={wl:lpTag.wl||null,scp:lpTag.scp||null,site:'54005696'||'',section:lpTag.section||'',tagletSection:lpTag.tagletSection||null,autoStart:lpTag.autoStart!==!1,ovr:lpTag.ovr||{},_v:'1.10.0',_tagCount:1,protocol:'https:',events:{bind:function(t,e,i){lpTag.defer(function(){lpTag.events.bind(t,e,i)},0)},trigger:function(t,e,i){lpTag.defer(function(){lpTag.events.trigger(t,e,i)},1)}},defer:function(t,e){0===e?(this._defB=this._defB||[],this._defB.push(t)):1===e?(this._defT=this._defT||[],this._defT.push(t)):(this._defL=this._defL||[],this._defL.push(t))},load:function(t,e,i){var n=this;setTimeout(function(){n._load(t,e,i)},0)},_load:function(t,e,i){var n=t;t||(n=this.protocol+'//'+(this.ovr&&this.ovr.domain?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site);var o=document.createElement('script');o.setAttribute('charset',e?e:'UTF-8'),i&&o.setAttribute('id',i),o.setAttribute('src',n),document.getElementsByTagName('head').item(0).appendChild(o)},init:function(){this._timing=this._timing||{},this._timing.start=(new Date).getTime();var t=this;window.attachEvent?window.attachEvent('onload',function(){t._domReady('domReady')}):(window.addEventListener('DOMContentLoaded',function(){t._domReady('contReady')},!1),window.addEventListener('load',function(){t._domReady('domReady')},!1)),'undefined'===typeof window._lptStop&&this.load()},start:function(){this.autoStart=!0},_domReady:function(t){this.isDom||(this.isDom=!0,this.events.trigger('LPT','DOM_READY',{t:t})),this._timing[t]=(new Date).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],hooks:lpTag.hooks||[],identities:lpTag.identities||[],ev:lpTag.ev||[]},lpTag.init()):window.lpTag._tagCount+=1;
 
-    // LP Logger
-    function logger(text) {
-        console.info(`%c ** lpLog ** ${text} `, 'background:#e20074;color:#fff');
-    }
+// LP Logger
+function logger(text) {
+    console.info(`%c ** lpLog ** ${text} `, 'background:#e20074;color:#fff');
+}
 
-    // BEGIN oAuth JS Method
-    var code;
+// BEGIN oAuth JS Method
+var code;
 
-    var cnf = {
-        redirectURI: "https://nehfster.github.io/mass_mutual/",
-        authURI: "https://nehfster62.auth0.com/authorize",
-        clientID: "DOjLb3UWqALnuQzqAxFgqG6USVYQFum-",
-        response_type: "code"
-    };
+var cnf = {
+    redirectURI: "https://nehfster.github.io/mass_mutual/",
+    authURI: "https://nehfster62.auth0.com/authorize",
+    clientID: "DOjLb3UWqALnuQzqAxFgqG6USVYQFum-",
+    response_type: "code"
+};
 
-    // On-page oauth code flow method
-    lpGetCode = function (callback) {
-        code = getParameterByName('code')
-        if (code == null) {
-            console.log('code undefined');
-            document.location = cnf.authURI + "?" + $.param({
-                client_id: cnf.clientID,
-                response_type: cnf.response_type,
-                scope: "openid email profile",
-                redirect_uri: cnf.redirectURI
-            });
-        }
-        else {
-            console.log("Got the Authcode from redirect url::" + code);
-
-            var result = {
-                ssoKey: code,
-                redirect_uri: cnf.redirectURI
-            };
-
-            callback(result);
-        }
-
-    };
-
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-
-    // Need to define one time on the page 
-    lpTag.sdes = lpTag.sdes || []; 
-
-    // Web tag - Send visitorLoggedIn to Live Person.
-    // Define per https://developers.liveperson.com/web-tag-sdes.html
-    var CustInfo = {
-        "type": "ctmrinfo",  //MANDATORY customer info
-        "info": {
-            "ctype": 'visitorLoggedIn'
-        }
-    };
-
-    lpTag.identities=[];
-    lpTag.identities.push(identityFn);
-    function identityFn(callback) {
-        callback({
-            iss: "Test",
-            acr: "loa1",
-            sub: "test12356675555444" 
+// On-page oauth code flow method
+lpGetCode = function (callback) {
+    code = getParameterByName('code')
+    if (code == null) {
+        console.log('code undefined');
+        document.location = cnf.authURI + "?" + $.param({
+            client_id: cnf.clientID,
+            response_type: cnf.response_type,
+            scope: "openid email profile",
+            redirect_uri: cnf.redirectURI
         });
     }
+    else {
+        console.log("Got the Authcode from redirect url::" + code);
 
-    // check user location before sending customer info
-    if (window.location.href.indexOf("/mass_mutual/") > 0)
-    {
-        sendCtype();
+        var result = {
+            ssoKey: code,
+            redirect_uri: cnf.redirectURI
+        };
+
+        callback(result);
     }
 
-    // Function to send customer info
-    function sendCtype() {
-        if (lpTag.sdes.send) {
-            lpTag.sdes.send(CustInfo);
-            clearTimeout(sendCtype);
-            //return false;
-        } else {
-            setTimeout(sendCtype, 50);
+};
 
-        }
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+// Need to define one time on the page 
+lpTag.sdes = lpTag.sdes || []; 
+
+// Web tag - Send visitorLoggedIn to Live Person.
+// Define per https://developers.liveperson.com/web-tag-sdes.html
+var CustInfo = {
+    "type": "ctmrinfo",  //MANDATORY customer info
+    "info": {
+        "ctype": 'visitorLoggedIn'
     }
-    </script>
-    <!-- END LP Tag and oAuth (Code Flow) -->
+};
 
-    <div>
-        <h1>Mass Mutual oAuth Testing Code Flow</h1>
-    </div>
-    <script type="text/javascript">
-    lpTag.section = ["mass_mutual","mass_mutual_oauth"];
-    </script>
+lpTag.identities=[];
+lpTag.identities.push(identityFn);
+function identityFn(callback) {
+    callback({
+        iss: "Test",
+        acr: "loa1",
+        sub: "test12356675555444" 
+    });
+}
 
-    <div id="lpAuthButton"></div>
+// check user location before sending customer info
+if (window.location.href.indexOf("/mass_mutual/") > 0) {
+    sendCtype();
+}
 
-    <!-- BEGIN Auto Click Engagement Button -->
-    <script type="text/javascript">
-    function callbackFunction(data){​​​​​​​​​​​​​​​​​​​​​const lpLocalStorage=window.localStorage;if(!lpLocalStorage.getItem("lp_engagementId")){​​​​​​​​​​​​​​​lpLocalStorage.setItem('lp_engagementId',data.engagementId);logger(`Engagement ${​​​​​​​​​​​​​​​​data.engagementName}​​​​​​​​​​​​​​​​ (${​​​​​​​​​lpLocalStorage.getItem("lp_engagementId")}​​​​​​​​​​​​​​​​) displayed`);​​​​​​​}​​​​​​​​​​​​​​​​​​​​​​​​​​​​else if(lpLocalStorage.getItem("lp_engagementId") === data.engagementId) {logger('TODO: Code to click lpAuthButton');lpLocalStorage.removeItem("lp_engagementId");}​​​​​​​​​​​​ else {​​​​​​​​​return;}​​​​​​​​​}​​​​​​​​​​​​​​​​​​​​​​​​​​​​
-    
-    lpTag.events.bind({​​​​​​​​​​​​​​​​​​​​​eventName:"OFFER_DISPLAY",appName:"LP_OFFERS",func:callbackFunction,async:true,triggerOnce:false}​​​​​​​​​​​​​​​​​​​​​​​​​​​​);
-    </script>
-    <!-- END Auto Click Engagement Button -->
+// Function to send customer info
+function sendCtype() {
+    if (lpTag.sdes.send) {
+        lpTag.sdes.send(CustInfo);
+        clearTimeout(sendCtype);
+        //return false;
+    } else {
+        setTimeout(sendCtype, 50);
+
+    }
+}
+</script>
+<!-- END LP Tag and oAuth (Code Flow) -->
+
+<div>
+    <h1>Mass Mutual oAuth Testing Code Flow</h1>
+</div>
+<script type="text/javascript">
+lpTag.section = ["mass_mutual","mass_mutual_oauth"];
+</script>
+
+<div id="lpAuthButton"></div>
+
+<!-- BEGIN Auto Click Engagement Button -->
+<script type="text/javascript">
+function callbackFunction(data) {
+    ​​​​​​​​​​​​​​​​​​​​​const lpLocalStorage = window.localStorage;
+    if( !lpLocalStorage.getItem( "lp_engagementId" ) ) {​​​​​​​​​​​​​​​
+        lpLocalStorage.setItem( "lp_engagementId", data.engagementId );
+        logger(`Engagement ${​​​​​​​​​​​​​​​​data.engagementName}​​​​​​​​​​​​​​​​ (${​​​​​​​​​lpLocalStorage.getItem( "lp_engagementId" )}​​​​​​​​​​​​​​​​) displayed`);
+    ​​​​​​​}​​​​​​​​​​​​​​​​​​​​​​​​​​​​else if( lpLocalStorage.getItem("lp_engagementId") === data.engagementId ) {
+        logger( 'TODO: Code to click lpAuthButton' );
+        lpLocalStorage.removeItem("lp_engagementId");
+    }​​​​​​​​​​​​ else {​​​​​​​​​return;}​​​​​​​​​
+}​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+
+lpTag.events.bind({​​​​​​​​​​​​​​​​​​​​​
+    eventName:"OFFER_DISPLAY",
+    appName:"LP_OFFERS",
+    func:callbackFunction,
+    async:true,
+    triggerOnce:false
+}​​​​​​​​​​​​​​​​​​​​​​​​​​​​);
+</script>
+<!-- END Auto Click Engagement Button -->
 </body>
 </html>
