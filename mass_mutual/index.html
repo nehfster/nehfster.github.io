@@ -114,7 +114,7 @@ lpTag.section = ["mass_mutual","mass_mutual_oauth"];
 <!-- BEGIN Auto Click Engagement Button -->
 <script type="text/javascript">
 function callbackFunction(data) {
-    ​​​​​​​​​​​​​​​​​​​​​const lpLocalStorage = window.localStorage;
+    ​​​​​​​​​​​​​​​​​​​​​var lpLocalStorage = window.localStorage;
     if( !lpLocalStorage.getItem( "lp_engagementId" ) ) {​​​​​​​​​​​​​​​
         lpLocalStorage.setItem( "lp_engagementId", data.engagementId );
         logger(`Engagement ${​​​​​​​​​​​​​​​​data.engagementName}​​​​​​​​​​​​​​​​ (${​​​​​​​​​lpLocalStorage.getItem( "lp_engagementId" )}​​​​​​​​​​​​​​​​) displayed`);
