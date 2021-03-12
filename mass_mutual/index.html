@@ -114,14 +114,14 @@ lpTag.section = ["mass_mutual","mass_mutual_oauth"];
 <!-- BEGIN Auto Click Engagement Button -->
 <script type="text/javascript">
 function callbackFunction(data) {
-    ​​​​​​​​​​​​​​​​​​​​​var lpLocalStorage = window.localStorage;
-    if( !lpLocalStorage.getItem( "lp_engagementId" ) ) {​​​​​​​​​​​​​​​
+    ​​​​​​​​​​​​​​​​​​​​​const lpLocalStorage = window.localStorage;
+    if( !lpLocalStorage.getItem("lp_engagementId") ) {​​​​​​​​​​​​​​​
         lpLocalStorage.setItem( "lp_engagementId", data.engagementId );
-        logger(`Engagement ${​​​​​​​​​​​​​​​​data.engagementName}​​​​​​​​​​​​​​​​ (${​​​​​​​​​lpLocalStorage.getItem( "lp_engagementId" )}​​​​​​​​​​​​​​​​) displayed`);
-    ​​​​​​​}​​​​​​​​​​​​​​​​​​​​​​​​​​​​else if( lpLocalStorage.getItem("lp_engagementId") === data.engagementId ) {
+        logger(`Engagement ${​​​​​​​​​​​​​​​​data.engagementName}​​​​​​​​​​​​​​​​ (${​​​​​​​​​lpLocalStorage.getItem("lp_engagementId")}​​​​​​​​​​​​​​​​) displayed`);
+    ​​​​​​​}​​​​​​​​​​​​​​​​​​​​​​​​​​​​ else if( lpLocalStorage.getItem("lp_engagementId") === data.engagementId ) {
         logger( 'TODO: Code to click lpAuthButton' );
         lpLocalStorage.removeItem("lp_engagementId");
-    }​​​​​​​​​​​​ else {​​​​​​​​​return;}​​​​​​​​​
+    }​​​​​​​​​​​​ else {​​​​​​​​​ return; }​​​​​​​​​
 }​​​​​​​​​​​​​​​​​​​​​​​​​​​​
 
 lpTag.events.bind({​​​​​​​​​​​​​​​​​​​​​
